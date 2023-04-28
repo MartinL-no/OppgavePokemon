@@ -21,52 +21,10 @@
     {
         static void Main(string[] args)
         {
-            var magikarp = new Magikarp();
-            var wildPokemon = new List<IPokemon>()
-            {
-                new Bulbosaur(),
-                new Geodude(),
-                new Pikachu()
-            };
+           
 
-            var isMagikarpsTurn = true;
-
-            while (true)
-            {
-                var pokemon = GetWildPokemon(wildPokemon);
-
-                if (isMagikarpsTurn)
-                {
-                    magikarp.Attack(pokemon);
-                    Console.WriteLine($"{magikarp.Name} attacked {pokemon.Name}, {pokemon.Name}'s health is now {pokemon.Health} ");
-                }
-                else
-                {
-                    pokemon.Attack(pokemon);
-                    Console.WriteLine($"{pokemon.Name} attacked {magikarp.Name}, {magikarp.Name}'s health is now {magikarp.Health} ");
-                }
-
-                if (magikarp.Health == 0 || pokemon.Health == 0)
-                {
-                    ShowWinner(magikarp, pokemon);
-                    break;
-                }
-                isMagikarpsTurn = !isMagikarpsTurn;
-            }
-        }
-        private static void ShowWinner(Magikarp magikarp, IPokemon pokemon)
-        {
-            if (magikarp.Health == 0) Console.WriteLine("Magikarp won the battle");
-
-            else Console.WriteLine($"{pokemon.Name} won");
-        }
-
-        public static IPokemon GetWildPokemon(List<IPokemon> wildPokemon)
-        {
-            var rand = new Random();
-            var index = rand.Next(wildPokemon.Count);
             
-            return wildPokemon[index];
         }
+        
     }
 }

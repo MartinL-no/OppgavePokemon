@@ -27,7 +27,7 @@ namespace OppgavePokemon
 
         public void Splash(IPokemon pokemon)
         {
-            pokemon.LooseHealth(5);
+            pokemon.LooseHealth(0);
         }
     }
 }
